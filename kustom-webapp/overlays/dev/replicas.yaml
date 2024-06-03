@@ -4,3 +4,24 @@ metadata:
   name: mywebapp
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      app: mywebapp
+  template:
+    metadata:
+      labels:
+        app: mywebapp
+    spec:
+      containers:
+      - name: mywebapp-container
+        image: mywebapp-image:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "250m"  # Request 250 millicpu
+            memory: "64Mi"  # Request 64 MiB of memory
+          limits:
+            cpu: "500m"
+            memory: "128Mi"
+

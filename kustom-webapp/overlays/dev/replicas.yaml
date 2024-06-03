@@ -13,8 +13,8 @@ spec:
         app: mywebapp
     spec:
       containers:
-      - name: mywebapp-container
-        image: mywebapp-image:latest
+      - name: mycontainer
+        image: myimage:latest
         ports:
         - containerPort: 80
         resources:
